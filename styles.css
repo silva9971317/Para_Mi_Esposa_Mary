@@ -1,0 +1,80 @@
+body {
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: #fff0f5;
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    perspective: 1000px;
+  }
+  
+  .flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #ff69b4;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transform-origin: top;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    z-index: 2;
+    backface-visibility: hidden;
+  }
+  
+  .letter {
+    opacity: 0;
+    padding: 20px;
+    transition: opacity 2s ease-in-out;
+  }
+  
+  .letter.second {
+    background-color: #fff0f5;
+    border: 2px dashed #ff69b4;
+    padding: 20px;
+    margin-top: 20px;
+    font-style: italic;
+    border-radius: 10px;
+    max-width: 500px;
+    animation: fadeIn 2s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background-color: #ff1493;
+  }
+  

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carta de Amor - 20 de Mayo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #ffe6f0, #fff0f6);
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #card {
+      width: 90vw;
+      max-width: 800px;
+      height: 500px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      transition: all 1s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    #card.expanded {
+      flex-direction: row;
+      height: 90vh;
+      max-width: 1200px;
+      transition: all 1s ease;
+      padding: 10px;
+    }
+
+    .center-content {
+      text-align: center;
+      padding: 20px;
+      transition: opacity 0.6s ease;
+    }
+
+    #card.expanded .center-content {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+    }
+
+    h2 {
+      color: #d6336c;
+      margin-bottom: 10px;
+    }
+
+    .names {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: #d6336c;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #a61e4d;
+    }
+
+    #letterSections {
+      display: none;
+      width: 100%;
+      height: 100%;
+      gap: 10px;
+    }
+
+    #card.expanded #letterSections {
+      display: flex;
+    }
+
+    .panel {
+      flex: 1;
+      background: #fff0f6;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(179,58,58,0.3);
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      color: #5c2c2c;
+      animation: slideIn 1s ease;
+    }
+
+    .panel img,
+    .panel video {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    .poetry {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      text-align: center;
+      width: 100%;
+    }
+
+    .letter-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      text-align: justify;
+      width: 100%;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Scrollbars suaves */
+    .panel::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .panel::-webkit-scrollbar-thumb {
+      background: #e599a4;
+      border-radius: 3px;
+    }
+
+    .panel::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div id="card">
+    <div class="center-content">
+      <h2>🌹 20 de Mayo - Día de las Cartas de Amor 🌹</h2>
+      <div class="names">De: Tu Esposo Angel Jhoel Silva Mamani<br>Para: Mi Esposa Mary Nicol Mendoza Mamani</div>
+      <button onclick="openLetter()">Abrir Carta</button>
+    </div>
+
+    <div id="letterSections">
+      <div class="panel">
+        <p>"Tu sonrisa es mi sol, tu abrazo mi hogar."</p>
+        <img src="Imagenes_Videos/Sonrisa_mas_bella_del_mundo.jpg" alt="Amor">
+      </div>
+      <div class="panel">
+        <div class="poetry">
+          Eres mi cielo en cada día gris,<br>
+          mi calma en la tormenta sin fin.<br>
+          Tus besos son mi dulce canción,<br>
+          tu amor, mi más bella razón.<br><br>
+          En tu mirada vive mi paz,<br>
+          en tu voz, el tiempo se va.<br>
+          Te amo más allá del sol y el mar,<br>
+          en este mundo y en otro lugar.
+        </div>
+      </div>
+      <div class="panel">
+        <div class="letter-text">
+          Hoy, 20 de mayo, quiero recordarte lo importante que eres para mí. No solo en los días especiales, sino cada momento de mi vida. Eres la compañera que siempre soñé, el amor que me sostiene y la fuerza que me impulsa a ser mejor.
+
+          Cada gesto tuyo, cada palabra, cada risa, son parte esencial de mi felicidad. Gracias por compartir conmigo esta aventura de la vida, por amarme incluso cuando no lo merezco, y por hacer de nuestro hogar un lugar lleno de amor y esperanza.
+
+          Esta carta es solo un reflejo de lo mucho que te amo, y aún así, las palabras se quedan cortas. Hoy y siempre, tú eres mi todo. ❤️
+        </div>
+      </div>
+      <div class="panel">
+        <p>"Contigo, cada día es un milagro."</p>
+        <video src="Imagenes_Videos/Recuerdo.mp4" controls muted loop></video>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById('card').classList.add('expanded');
+    }
+  </script>
+</body>
+</html>
